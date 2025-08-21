@@ -5,7 +5,7 @@ import ThemedText from '../../components/ThemedText'
 
 const Register = () => {
   return (
-    <ThemedView style={styles.container}>
+    <ThemedView safe={true} style={styles.container}>
         <ThemedText>
             Taemo
         </ThemedText>

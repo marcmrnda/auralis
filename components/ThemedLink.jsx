@@ -3,6 +3,7 @@ import { Colors } from '../constants/Colors'
 import { Link } from 'expo-router'
 
 
+
 const ThemedLink = ({style,  secondButton=false, ...props}) => {
     const colorScheme = useColorScheme()
     const theme = Colors[colorScheme] ?? Colors.dark

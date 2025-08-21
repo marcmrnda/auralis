@@ -1,42 +1,56 @@
-import { StyleSheet} from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import ThemedText from '../components/ThemedText'
 import ThemedView from '../components/ThemedView'
 import Spacer from '../components/Spacer'
 import ThemedImage from '../components/ThemedImage'
 import { useFonts } from 'expo-font'
-import { Poppins_400Regular,Poppins_600SemiBold } from '@expo-google-fonts/poppins'
+import { Poppins_400Regular, Poppins_600SemiBold } from '@expo-google-fonts/poppins'
 import { Outfit_500Medium } from '@expo-google-fonts/outfit'
-import ThemedLink from '../components/ThemedLink'
+import ThemedButton from '../components/ThemedButton'
+import { Link } from 'expo-router'
+import { useColorScheme } from 'react-native'
+import { Colors } from '../constants/Colors'
 
 const Home = () => {
-  const [loaded]  = useFonts({
-        Poppins_400Regular,Outfit_500Medium,Poppins_600SemiBold
+    const colorScheme = useColorScheme()
+    const theme = Colors[colorScheme] ?? Colors.dark
+    const [loaded] = useFonts({
+        Poppins_400Regular, Outfit_500Medium, Poppins_600SemiBold
     })
 
-    if(!loaded) return null
+    if (!loaded) return null
 
-  return (
-    <ThemedView style={styles.container}>
-        <ThemedImage style={styles.img}/>
-        <ThemedText title={true} style={styles.title}>
-            auralis
-        </ThemedText>
-        <ThemedText secondary={true} style={styles.text}>
-            Cough. Analyze. Know
-        </ThemedText>
+    return (
+        <ThemedView safe={true} style={styles.container}>
 
-        <Spacer height={220}/>
+            <View style={styles.littleContainer}>
+                <ThemedImage style={styles.img} />
+                <ThemedText title={true} style={styles.title}>
+                    auralis
+                </ThemedText>
+                <ThemedText secondary={true} style={styles.text}>
+                    Cough. Analyze. Know
+                </ThemedText>
+            </View>
 
 
-        <ThemedLink style={styles.link1} secondary={true} href='/login'>
-        Get Started
-        </ThemedLink>
-        <Spacer height={12}/>
-        <ThemedLink style={styles.link2} secondButton={true} href='/register'>
-        I'm new, Sign me up!
-        </ThemedLink>
-    </ThemedView>
-  )
+
+
+            <ThemedButton style={[styles.link1, { backgroundColor: theme.button1 }]}>
+                <Link style={{ textAlign: 'center', textAlignVertical: "center", fontFamily: "Poppins_600SemiBold", color: "#FFFFFF", fontSize: 14 }} href={"/login"}>
+                    Get Started
+                </Link>
+            </ThemedButton>
+
+            <Spacer height={0} />
+
+            <ThemedButton style={[styles.link2, { backgroundColor: theme.button2 }]}>
+                <Link href={"/register"} style={{ textAlign: 'center', textAlignVertical: "center", fontFamily: "Poppins_600SemiBold", color: theme.navBackground, fontSize: 14 }}>
+                    I'm new, sign me up
+                </Link>
+            </ThemedButton>
+        </ThemedView>
+    )
 }
 
 export default Home
@@ -46,45 +60,42 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        alignContent: 'center'
+
     },
     title: {
         fontFamily: "Outfit_500Medium",
-        fontSize: 35,
-        lineHeight: 24,
+        fontSize: 30,
+        lineHeight: 30,
         letterSpacing: -1,
-        height: 100
     },
     img: {
-        marginTop: 80,
-        marginBottom: -185
+        width: 500,
+        height: 100,
+        marginVertical: 10
     },
     text: {
         fontFamily: "Poppins_400Regular",
         fontSize: 14,
         lineHeight: 24,
-        letterSpacing: -1,
-        marginTop: -65
+        letterSpacing: -1
     },
     link1: {
-        fontFamily: "Poppins_600SemiBold",
         width: 361,
         height: 48,
         borderRadius: 999,
-        textAlign: 'center',
-        textAlignVertical: 'center',
-        marginTop: 15,
-        fontSize: 14
-
-    
+        justifyContent: "center",
+        marginTop: 500
     },
     link2: {
-        fontFamily: "Poppins_600SemiBold",
         width: 361,
         height: 48,
         borderRadius: 999,
-        textAlign: 'center',
-        textAlignVertical: 'center',
-        fontSize: 14
+        justifyContent: "center",
+        marginTop: 3
+    },
+    littleContainer: {
+        justifyContent: "center",
+        alignItems: "center",
+        top: 250
     }
 })
