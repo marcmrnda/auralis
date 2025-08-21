@@ -38,23 +38,7 @@ const DashboardLayout = () => {
                 ),
                 tabBarLabel: ({ focused }) => {
                     return <Ionicons
-                        size={10}
-                        name={focused ? "ellipse-sharp" : "ellipse-outline"}
-                        color={focused ? theme.iconColorFocused : theme.iconColor}
-                    />
-                }
-            }} />
-
-            <Tabs.Screen name='profile' options={{
-                title: "Profile", tabBarIcon: ({ focused }) => (
-                    <Ionicons
-                        size={30}
-                        name={focused ? "person-sharp" : "person-outline"}
-                        color={focused ? theme.iconColorFocused : theme.iconColor}
-                    />
-                ), tabBarLabel: ({ focused }) => {
-                    return <Ionicons
-                        size={10}
+                        size={8}
                         name={focused ? "ellipse-sharp" : "ellipse-outline"}
                         color={focused ? theme.iconColorFocused : theme.iconColor}
                     />
@@ -70,12 +54,30 @@ const DashboardLayout = () => {
                     />
                 ), tabBarLabel: ({ focused }) => {
                     return <Ionicons
-                        size={10}
+                        size={8}
                         name={focused ? "ellipse-sharp" : "ellipse-outline"}
                         color={focused ? theme.iconColorFocused : theme.iconColor}
                     />
                 }
             }} />
+
+            <Tabs.Screen name='profile' options={{
+                title: "Profile", tabBarIcon: ({ focused }) => (
+                    <Ionicons
+                        size={30}
+                        name={focused ? "person-sharp" : "person-outline"}
+                        color={focused ? theme.iconColorFocused : theme.iconColor}
+                    />
+                ), tabBarLabel: ({ focused }) => {
+                    return <Ionicons
+                        size={8}
+                        name={focused ? "ellipse-sharp" : "ellipse-outline"}
+                        color={focused ? theme.iconColorFocused : theme.iconColor}
+                    />
+                }
+            }} />
+
+            
         </Tabs>
     )
 

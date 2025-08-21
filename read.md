@@ -46,7 +46,12 @@ npx expo install @expo-google-fonts/outfit @expo-google-fonts/poppins expo-font
 **Icons:**
 
 ```bash
-npm install @expo/vector-icons
+npx expo install @expo/vector-icons
+```
+**Recording:**
+
+```bash
+npx expo install react-native-audio-recorder-player
 ```
 
 ### 4. Run the app

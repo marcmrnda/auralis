@@ -38,12 +38,12 @@ const Login = () => {
 
             <View style={styles.inputView}>
                 <Fontisto style={styles.icon} name="email" size={24} color={"#FF6B5D"} />
-                <ThemedTextInput style={styles.inputText} placeholder="Email Address" />
+                <ThemedTextInput style={styles.inputText}  placeholder="Email Address" />
             </View>
 
             <View style={styles.inputView}>
                 <MaterialIcons style={styles.icon} name="lock" size={24} color={"#FF6B5D"} />
-                <ThemedTextInput style={styles.inputText} placeholder="Password"  />
+                <ThemedTextInput style={styles.inputText} secureTextEntry placeholder="Password"  />
 
                 
             </View>
