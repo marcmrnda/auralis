@@ -54,6 +54,11 @@ npx expo install @expo/vector-icons
 npx expo install react-native-audio-recorder-player
 ```
 
+If there's an error regarding TurboModule and Hermes use this
+
+npx expo install expo@53.0.22 react-native-gesture-handler@~2.24.0 react-native-reanimated@~3.17.4
+
+
 ### 4. Run the app
 
 ```bash

@@ -86,6 +86,6 @@ const styles = StyleSheet.create({
         height: 63,
         justifyContent: "center",
         alignItems: "center",
-        top: 185
+        top: 205
     }
 })
